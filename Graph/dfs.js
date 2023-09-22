@@ -6,8 +6,10 @@ class Graph{
 			this.adj[i] = [];
 		}
 	}	
-	addEdge(v, w){
-		this.adj[v].push(w);
+	addEdge(source, destination){
+		// console.log("==========1111",this.adj);
+		this.adj[source].push(destination);
+		// console.log("==========2222",this.adj);
 	}
 	
 	DFSUtil(startingNode, visited){
