@@ -5,15 +5,15 @@
  */
 
 function height(root){
-    if (root == null)
-        return 0;
+    if (root == null)return 0;
+    else{
+    let LH = height(root.left);
+    let RH = height(root.right);
+    if (LH > RH)  // or  max(LH,RH)+1
+        return (LH + 1);
     else
-    {
-        let LH = height(root.left);
-        let RH = height(root.right);
-        if (LH > RH)  // or  max(LH,RH)+1
-            return (LH + 1);
-         else
-            return (RH + 1);
+        return (RH + 1);
+
     }
+   
 }
