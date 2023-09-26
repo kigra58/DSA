@@ -6,8 +6,9 @@ class Graph{
 			this.adj[i] = [];
 		}
     }
-	addEdge(v, w){
-		this.adj[v].push(w);
+	addEdge(s, d){
+		// directed graph 
+		this.adj[s].push(d);
 	}
 		
 	BFS(startingNode){

@@ -29,22 +29,22 @@ function isValid(vis, row, col){
 
 function BFS( grid, vis,row, col){
 	let queue = [];
-	queue.push([row, col ]);
 	vis[row][col] = true;
+	queue.push([row, col ]);
 
 	while (queue.length!=0) {
 		const cell = queue[0];
 		const x = cell[0];
 		const y = cell[1];
-		console.log( grid[x][y] + " ");
+		console.log(grid[x][y] + " ");
 		queue.shift();
 
-		for (let i = 0; i < 4; i++) {
+		for (let i = 0; i < 4; i++){
 			const adjx = x + dRow[i];
 			const adjy = y + dCol[i];
 			if (isValid(vis, adjx, adjy)){
-				queue.push([adjx, adjy ]);
 				vis[adjx][adjy] = true;
+				queue.push([adjx, adjy]);
 			}
 		}
 	}
