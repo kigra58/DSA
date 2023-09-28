@@ -1,10 +1,10 @@
 
 class Node {
-constructor(val) {
- this.data = val;
- this.left = null;
- this.right = null;
-}
+   constructor(val) {
+   this.data = val;
+   this.left = null;
+   this.right = null;
+  }
 }
 
 let root = null;

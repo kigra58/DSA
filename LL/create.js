@@ -1,8 +1,8 @@
-class LL {
-  constructor(head = null) {
-    this.head = head;
-  }
-}
+// class LL {
+//   constructor(head = null) {
+//     this.head = head;
+//   }
+// }
 
 class Node {
   constructor(data, next = null) {
