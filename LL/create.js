@@ -1,8 +1,8 @@
-// class LL {
-//   constructor(head = null) {
-//     this.head = head;
-//   }
-// }
+class LL {
+  constructor(head = null) {
+    this.head = head;
+  }
+}
 
 class Node {
   constructor(data, next = null) {
@@ -28,5 +28,14 @@ head.next.next.next = new Node(5);
 
 let list = new LL(head);
 
-console.log(list.head.next);
-// console.log(list);
+const traverse = (head) => {
+  while (!head) {
+    console.log("-->", head.data);
+    head = head.next;
+  }
+  console.log("NULL");
+};
+
+console.log("==============",traverse(head));
+
+
