@@ -6,17 +6,16 @@ class cell{
 	}
 }
 
-// Utility method returns true if (x, y) lies
-// inside Board
+
 function isInside(x,y,N){
-	if (x >= 1 && x <= N && y >= 1 && y <= N)
-			return true;
-		return false;
+	if (x >= 1 && x <= N && y >= 1 && y <= N){
+     return true;
+	}	
+	return false;
 }
 
 
-function minStepToReachTarget(knightPos,targetPos,N)
-{
+function minStepToReachTarget(knightPos,targetPos,N){
 	    // x and y direction, where a knight can move
 		let dx = [ -2, -1, 1, 2, -2, -1, 1, 2 ];
 		let dy = [ -1, -2, -2, -1, 1, 2, 2, 1 ];
