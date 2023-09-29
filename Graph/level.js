@@ -1,9 +1,8 @@
+
 const vertex=8;
 let visited=new Array(vertex).fill(false);
 let adjList=new Array(vertex).fill([]);
-let parent=new Array(vertex).fill(-1);
-const startingNode=0;
-const destNode=7;
+let level=[]
 
 function addEdge(src,des){
    adjList[src]=[...adjList[src],des];
@@ -24,36 +23,23 @@ function BFS(startNode){
     let queue=[];
     queue.push(startNode);
     visited[startNode]=true;
-    parent[startNode]=-1
+    level[startNode]=0;
     while (queue.length!==0){
         startNode=queue[0];
-        // console.log("======>",startNode);
+        console.log("======>",startNode);
         queue.shift();
         adjList[startNode].forEach(ele => {
             if(!visited[ele]){
                 queue.push(ele);
                 visited[ele]=true;
-                parent[ele]=startNode;
+                level[ele]=level[startNode]+1;
             }
         });
     }
+    return false
+
 }
 
-BFS(0);
-// console.log("===============parent",parent)
 
-
-
-let ans=[]
-function getPath(parnt,sr,de){
-   if(sr===de){
-     return "No Path"
-   }
-   ans.push(parnt[de]);
-//    console.log("===Path",parnt[de]);
-   return getPath(parnt,sr,parnt[de]);
-}
-getPath(parent,0,7);
-console.log("============ans",ans.reverse());
-
-
+BFS(0,3);
+// console.log("==============level",level)
