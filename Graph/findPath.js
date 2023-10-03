@@ -14,20 +14,15 @@ const grid = [
 
 const vis = Array.from(Array(ROW), () => Array(COL).fill(false));
 
-// Direction vectors
 let dRow = [-1, 0, 1, 0];
 let dCol = [0, 1, 0, -1];
 
 function isValid(vis, row, col) {
-	// CHECK BOUNDRIES
+
 	if (row < 0 || col < 0 || row >= ROW || col >= COL)
 		return false;
-
-	// If cell is already visited
 	if (vis[row][col])
 		return false;
-
-	// Otherwise
 	return true;
 }
 
