@@ -1,45 +1,37 @@
+let vertex = 9;
+let adjList = new Array(vertex).fill([]);
+let visited = new Array(vertex).fill(false);
 
-let vertex=4;
-let adjList=new Array(vertex).fill([]);
-let visited=new Array(vertex).fill(false);
-
-const addEdge=(source,destination)=>{
-    adjList[source]=[...adjList[source],destination];
+const addEdge = (source, destination) => {
+    adjList[source] = [...adjList[source], destination];
 };
 
-addEdge(0, 1);
-addEdge(0, 2);
 addEdge(1, 2);
-addEdge(2, 0);
 addEdge(2, 3);
-addEdge(3, 3);
+addEdge(2, 4);
+addEdge(3, 5);
+addEdge(6, 7);
+addEdge(8, 0);
 
-const dfs=(startingNode)=>{
-    visited[startingNode]=true;
-    console.log(startingNode + " ");
-    for(let i of adjList[startingNode]){
-        if(!visited[i]) 
-          dfs(i);
-    };  
+const dfs = (startingNode) => {
+    visited[startingNode] = true;
+    // console.log(startingNode + " ");
+    for (let i of adjList[startingNode]) {
+        if (!visited[i]) {
+            dfs(i);
+        }
+    };
+
 };
 
-const bfs=(startingNode)=>{
-    let queue=[];
-    visited[startingNode]=true;
-    queue.push(startingNode);
-    while (queue.length!==0) {
-        startingNode=queue[0];
-        console.log(startingNode + " ");
-        queue.shift();
-        for(let i of adjList[startingNode]){   
-            if(!visited[i]){
-                visited[i]=true;
-                queue.push(i);
-            }
+function count() {
+    let cnt = 0;
+    for (let i = 1; i < vertex; ++i) {
+        if (!visited[i]) {
+            dfs(i)
+            cnt++;
         }
     }
+    return cnt;
 }
-
-const startNode=2;
-const res=dfs(startNode);
-// console.log("==================adjList",adjList);
+console.log("================>Res", count())

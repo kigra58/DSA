@@ -1,39 +1,40 @@
-
+/**
+ *  FIND SHORTEST PATH B/W  SOURCE TO DESTINATION
+ */
 class Graph {
-	constructor(V){
+	constructor(V) {
 		this.V = V;
 		this.adj = new Array(V);
-		for(let i = 0; i < V; i++){
+		for (let i = 0; i < V; i++) {
 			this.adj[i] = new Array();
 		}
 	}
 
-	addEdge(u, v, w){
-		this.adj[u].push([v, w]);
-		this.adj[v].push([u, w]);
+	addEdge(src, dest, wt) {
+		this.adj[src].push([dest, wt]);
+		this.adj[dest].push([src, wt]);
 	}
-	shortestPath(src){
+
+
+	shortestPath(src) {
 		let pq = [];
 		let dist = new Array(V).fill(Number.POSITIVE_INFINITY);
 		pq.push([0, src]);
 		dist[src] = 0;
 		while (pq.length > 0) {
-	
-			let u = pq[0][1];
-			pq.shift();
-			for(let i = 0; i < this.adj[u].length; i++){
-				
-				// Get vertex label and weight of current
-				// adjacent of u.
-				let v = this.adj[u][i][0];
-				let weight = this.adj[u][i][1];
 
-				if (dist[v] > dist[u] + weight) {
-					// Updating distance of v
-					dist[v] = dist[u] + weight;
-					pq.push([dist[v], v]);
-					pq.sort((a, b) =>{
-						if(a[0] == b[0]) return a[1] - b[1];
+			let front = pq[0][1];
+			pq.shift();
+			for (let i = 0; i < this.adj[front].length; i++) {
+				let vert = this.adj[front][i][0];
+				let weight = this.adj[front][i][1];
+
+				if (dist[vert] > dist[front] + weight) {
+					// Updating distance of vert
+					dist[vert] = dist[front] + weight;
+					pq.push([dist[vert], vert]);
+					pq.sort((a, b) => {
+						if (a[0] == b[0]) return a[1] - b[1];
 						return a[0] - b[0];
 					});
 				}
