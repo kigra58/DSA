@@ -3,6 +3,8 @@
  * @param {*} n 
  * @returns 
  */
+
+// BOTTOM UP APPROCH 
 function fact(n) {
     let result=[1000];
     if (n >= 0) {
@@ -12,7 +14,7 @@ function fact(n) {
        }
        return result[n];
     }
- }
+}
 
 
 /**
@@ -20,6 +22,7 @@ function fact(n) {
  * @param {*} n 
  * @returns 
  */
+// BOTTOM UP APPROCH
 function fibo(n) {
     let result=[1000];
     if (n >= 0) {
@@ -30,9 +33,33 @@ function fibo(n) {
        }
        return result[n];
     }
- }
+}
 
  
 
-const res= fibo(5);
-console.log("============Res",res);
+// const res= fibo(5);
+// console.log("============Res",res);
+
+
+/**
+ * TOP DOWN APPROCH
+ */
+let num=10;
+let DP=new Array(num+1).fill(-1);
+function fiboTopDown(n){
+  if(n==0)return 0;
+  if(n==1)return 1;
+  if(DP[n]===-1) {
+     return  DP[n]=fiboTopDown(n-1)+fiboTopDown(n);
+   }else{
+      return DP[n];
+  } 
+}
+
+
+
+console.log("=============>",factTopDown(num));
+
+
+
+
