@@ -1,3 +1,10 @@
+/**
+ * 1. item include 
+ * 2. item not inlcude
+ */
+
+
+
 
 function isSubsetSum(arr,N,sum){
 
@@ -12,7 +19,7 @@ function isSubsetSum(arr,N,sum){
     const includeItem=isSubsetSum(arr, N - 1, sum - arr[N - 1]);
     const excludeItem=   isSubsetSum(arr, N - 1, sum) ;
 
-    return includeItem|| excludeItem;
+    return includeItem || excludeItem;
     
 }
 
