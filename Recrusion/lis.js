@@ -6,25 +6,22 @@
 
 
 
-function LIS(arr,prevInd,currInd){
-  
-    if(arr.length===currInd) return 0;
-    let includeItem=0;
-    
-    
-    /**
-     * for first ele prevInd=-1
-     */
+function LIS(arr, prevInd, currInd) {
 
-    if(prevInd===-1 || arr[currInd] > arr[prevInd]){
-       includeItem=1+LIS(arr,currInd,currInd+1);
+    if (arr.length === currInd) return 0;
+    let includeItem = 0;
+
+    //for first ele prevInd=-1
+
+    if (prevInd === -1 || arr[currInd] > arr[prevInd]) {
+        includeItem = 1 + LIS(arr, currInd, currInd + 1);
     }
-    const excludeItem=LIS(arr,prevInd,currInd+1);
-    return Math.max(excludeItem,includeItem);
+    const excludeItem = LIS(arr, prevInd, currInd + 1);
+    return Math.max(excludeItem, includeItem);
 }
 
-const res=LIS([3,10,2,11],-1,0);
+const res = LIS([3, 10, 2, 11], -1, 0);
 
 
 
-console.log("================res",res);
+console.log("================res", res);

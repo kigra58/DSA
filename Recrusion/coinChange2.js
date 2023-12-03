@@ -1,5 +1,5 @@
 /**
- * 
+ * Q. FIND THE NUMBER OF WAYS TO GET SUM FROM COINS ARR.
  */
 
 
@@ -13,8 +13,8 @@ function CC(arr, sum, N) {
 
     const includeItem = CC(arr, sum - arr[N - 1], N);
     const excludeItem = CC(arr, sum, N - 1);
-   
-    console.log("=============ttttttttt",includeItem+excludeItem);
+
+    console.log("=============ttttttttt", includeItem + excludeItem);
     return includeItem + excludeItem;
 
 }
