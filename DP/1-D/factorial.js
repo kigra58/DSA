@@ -1,8 +1,4 @@
-/**
- * FACTORIAL
- * @param {*} n 
- * @returns 
- */
+
 
 // BOTTOM UP APPROCH 
 function fact(n) {
@@ -17,11 +13,7 @@ function fact(n) {
 }
 
 
-/**
- *  FIBONACCI
- * @param {*} n 
- * @returns 
- */
+
 // BOTTOM UP APPROCH
 function fibo(n) {
     let result=[1000];
