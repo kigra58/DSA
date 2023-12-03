@@ -11,29 +11,26 @@
  */
 
 
-function SS(set, N, sum){
+function SS(set, N, sum) {
 
-    if (sum === 0)
-        return true;
+    if (sum === 0) return true;
 
-    if (N === 0)
-        return false;
+    if (N === 0) return false;
 
-    if (set[N - 1] > sum){
+    if (set[N - 1] > sum) {
         return SS(set, N - 1, sum);
     }
 
-    const includeItem=SS(set, N - 1, sum - set[N - 1]);
-    const excludeItem=SS(set, N - 1, sum);
-
+    const includeItem = SS(set, N - 1, sum - set[N - 1]);
+    const excludeItem = SS(set, N - 1, sum);
     return includeItem || excludeItem;
 };
 
-const  set = [ 3, 34, 4, 12, 5, 2 ];
+const set = [3, 34, 4, 12, 5, 2];
 const sum = 9;
-const res= SS(set,set.length,sum);
+const res = SS(set, set.length, sum);
 
-console.log("===============ressssss",res);
+console.log("===============ressssss", res);
 
 
 
