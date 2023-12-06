@@ -1,8 +1,7 @@
 const coins = [2, 5, 3, 6];
 const sum = 10;
 
-function CC(arr, sum, N) {
-    let dp = new Array(N + 1).fill(new Array(sum + 1).fill(-1));
+function CC(arr, sum, N, dp) {
     if (sum === 0) return dp[N][sum] = 1
 
     if (sum < 0 || N <= 0) return 0;
@@ -11,14 +10,14 @@ function CC(arr, sum, N) {
         return dp[N][sum];
     }
     else {
-        const includeItem = CC(arr, sum - arr[N - 1], N);
-        const excludeItem = CC(arr, sum, N - 1);
+        const includeItem = CC(arr, sum - arr[N - 1], N, dp);
+        const excludeItem = CC(arr, sum, N - 1, dp);
 
         return dp[N][sum] = includeItem + excludeItem
     }
 
 
 }
-
-const res = CC(coins, sum, coins.length);
+const dp = Array.from(Array(coins.length + 1), () => Array(sum + 1).fill(-1));
+const res = CC(coins, sum, coins.length, dp);
 console.log("=========resss", res);
