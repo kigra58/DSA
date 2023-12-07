@@ -17,7 +17,7 @@ function subsetsArr(arr = [1, 2, 3], ans = [], index = 0) {
   const N = arr.length;
   if (N === index) {
     console.log("================", ans)
-    console.log("sum=>", subSetsSum(ans));
+    // console.log("sum=>", subSetsSum(ans));
     return;
   }
   subsetsArr(arr, ans.concat(arr[index]), index + 1);
