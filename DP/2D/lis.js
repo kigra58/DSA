@@ -5,14 +5,14 @@ function LIS(currIndex, prevIndex, n, a, dp) {
 		if (dp[currIndex][prevIndex + 1] != -1) {
 		   return dp[currIndex][prevIndex + 1];
 		}
-
-		const notTake = 0 + LIS(currIndex + 1, prevIndex, n, a, dp);
 		let take = Number.MIN_VALUE;
+		
 		if (prevIndex == -1 || a[currIndex] > a[prevIndex]) {
 		    take = 1 + LIS(currIndex + 1, currIndex, n, a, dp);
 		}
-
-		return (dp[currIndex][prevIndex + 1] = Math.max(take, notTake));
+		const notTake = 0 + LIS(currIndex + 1, prevIndex, n, a, dp);
+		
+		return dp[currIndex][prevIndex + 1] = Math.max(take, notTake);
 }
     
 
