@@ -17,8 +17,8 @@ class Graph{
 			visited[i] = false;
 		}
 		let queue=[];
-		visited[startingNode]=true;
 		queue.push(startingNode);
+		visited[startingNode]=true;
 		while(queue.length>0){
 			startingNode = queue[0];
 			console.log(startingNode+" ");
@@ -27,8 +27,8 @@ class Graph{
 			// Check adjacency node, who not mark as visited and push in queue
 			this.adj[startingNode].forEach((adjacent) => {
 				if(!visited[adjacent]){
-					visited[adjacent]=true;
 					queue.push(adjacent);
+					visited[adjacent]=true;
 				}
 			});
 		}
