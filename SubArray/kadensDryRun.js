@@ -1,7 +1,25 @@
 const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 
-function fun(arr) {
+/**
+ *  ALGORITHM
+ */
+function kadens(arr) {
+    let currSum = 0; maxSum = arr[0];
+    arr.forEach(ele => {
+        currSum += ele;
+        maxSum = Math.max(currSum, maxSum);
+        if (sum < 0) {
+            sum = 0;
+        }
+    });
+    return maxSum;
+};
 
+
+/**
+ *  DRY RUN CODE HERE
+ */
+function fun(arr) {
     let sum = 0, maxi = arr[0];
     const ansArr = [];
     for (let i = 0; i < arr.length; i++) {

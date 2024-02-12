@@ -25,9 +25,7 @@ function fun(arr) {
 
 
 function recFun(arr, start, end) {
-
     if (end === arr.length) return;
-
     else if (start > end) {
         recFun(arr, 0, end + 1);
     }
@@ -43,6 +41,30 @@ function recFun(arr, start, end) {
     }
     return;
 }
+
+function printAllSubarrays(arr) {
+    const n = arr.length;
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i; j < n; j++) {
+            const subarray = arr.slice(i, j + 1);
+            console.log(subarray);
+        }
+    }
+}
+
+
+function printAllSubarrays(arr) {
+    const n = arr.length;
+    for (let i = 0; i < n; i++) {
+        let subarray = [];
+        for (let j = i; j < n; j++) {
+            subarray.push(arr[j]);
+            console.log(subarray.slice());  // Log a shallow copy to avoid changes in subsequent iterations
+        }
+    }
+}
+
 
 
 

@@ -1,5 +1,13 @@
 
 
+/**1. PRINT ALL SUB ARRAYS
+ * 2. SUB ARRAY SUM EQUAL TO K
+ * 3. SUB ARRAY SUM EQUAL TO ZERO
+ * 4. SUB ARRAY SUM DIVISIBLE BY K
+ */
+
+
+
 function firstApproch(arr, n, sum) {
     let cnt = 0;
     for (let i = 0; i < n; i++) {
@@ -36,9 +44,7 @@ function findSubarraySum(arr, n, sum) {
 
     let currsum = 0;
     for (let i = 0; i < n; i++) {
-
         currsum += arr[i];
-
         if (currsum == sum) {
             cnt++;
         };
@@ -58,8 +64,8 @@ function findSubarraySum(arr, n, sum) {
 };
 
 const arr = [10, 2, -2, -20, 10];
-let sum = -10;
-let n = arr.length;
+const sum = -10;
+const n = arr.length;
 console.log(findSubarraySum(arr, n, sum));
 
 
