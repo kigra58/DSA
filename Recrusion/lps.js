@@ -23,10 +23,10 @@ function LPS(s) {
 		low = i - 1;
 		hi = i;
 
-    // EVEN SIZE SUBSTRING
+       // EVEN SIZE SUBSTRING
 		while (low >= 0 && hi < N && s[low] === s[hi]) {
 			if (hi - low + 1 > end) {
-        start = low;
+                start = low;
 				end = hi - low + 1;
 			}
 			low--;
@@ -34,12 +34,12 @@ function LPS(s) {
 		};
     
 		low = i - 1;
-		hi = i + 1;
+		hi = i + 1;   //  ONLY HIGH WILL BE CHANGED
     
 	  // ODD SIZE SUBSTRING
 		while (low >= 0 && hi < N && s[low] === s[hi]) {
 			if (hi - low + 1 > end) {
-        start = low;
+                start = low;
 				end = hi - low + 1;
 			};
 			low--;
