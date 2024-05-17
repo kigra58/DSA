@@ -19,7 +19,7 @@ function bruteForce(arr,target){
  *  TWO POINTER APPROCH
  */
 function twoSum(arr,target) {
-  let L=0, H=arr.length;
+  let L=0, H=arr.length-1;
   while (L<=H) {
      const sum=arr[L]+arr[H];
      if(sum===target){
