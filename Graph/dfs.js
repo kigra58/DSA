@@ -46,3 +46,82 @@ console.log(`Following is Depth First Traversal "+"(starting from vertex ${start
 obj.DFS(startNode);
 
 
+
+
+// class Graph {
+//     constructor(vertices) {
+//         this.V = vertices;
+//         this.adj = new Map();
+//         for (let i = 0; i < vertices; i++) {
+//             this.adj.set(i, []);
+//         }
+//     }
+
+//     addEdge(v, w) {
+//         this.adj.get(v).push(w);
+//         this.adj.get(w).push(v); // Assuming the graph is undirected
+//     }
+
+//     DFS(startingNode) {
+//         let visited = new Array(this.V).fill(false);
+//         let stack = [];
+
+//         stack.push(startingNode);
+
+//         while (stack.length > 0) {
+//             let node = stack.pop();
+
+//             if (!visited[node]) {
+//                 console.log(node + " ");
+//                 visited[node] = true;
+//             }
+
+//             for (let i of this.adj.get(node)) {
+//                 if (!visited[i]) {
+//                     stack.push(i);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+
+// class Graph {
+//     constructor(vertices) {
+//         this.V = vertices;
+//         this.adj = new Map();
+//         for (let i = 0; i < vertices; i++) {
+//             this.adj.set(i, []);
+//         }
+//     }
+
+//     addEdge(v, w) {
+//         this.adj.get(v).push(w);
+//         this.adj.get(w).push(v); // Assuming the graph is undirected
+//     }
+
+//     DFS(startingNode) {
+//         let visited = new Array(this.V).fill(false);
+
+//         const dfsRecursive = (node) => {
+//             visited[node] = true;
+//             console.log(node + " ");
+
+//             for (let i of this.adj.get(node)) {
+//                 if (!visited[i]) {
+//                     dfsRecursive(i);
+//                 }
+//             }
+//         };
+
+//         dfsRecursive(startingNode);
+//     }
+// }
+
+
+
+
+
+
+
