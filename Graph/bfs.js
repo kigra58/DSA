@@ -12,10 +12,11 @@ class Graph{
 	}
 		
 	BFS(startingNode){
-		let visited = new Array(this.V);
-		for(let i = 0; i < this.V; i++){
-			visited[i] = false;
-		}
+		// let visited = new Array(this.V);
+		// for(let i = 0; i < this.V; i++){
+		// 	visited[i] = false;
+		// }
+		let visited = new Array(this.V).fill(false);
 		let queue=[];
 		queue.push(startingNode);
 		visited[startingNode]=true;
