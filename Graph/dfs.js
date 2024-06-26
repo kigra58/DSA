@@ -3,37 +3,36 @@
  * RECUSIVE APPROCH
  */
 
-// class Graph {
-//     constructor(vertices) {
-//         this.V = vertices;
-//         this.adj = new Array(vertices);
-//         for (let i = 0; i < vertices; i++) {
-//             this.adj[i] = [];
-//         }
-//     }
+class Graph {
+    constructor(vertices) {
+        this.V = vertices;
+        this.adj = new Array(vertices);
+        for (let i = 0; i < vertices; i++) {
+            this.adj[i] = [];
+        }
+    }
 
-//     addEdge(v, w) {
-//         this.adj[v].push(w);
-//         this.adj[w].push(v); // Assuming the graph is undirected
-//     }
+    addEdge(v, w) {
+        this.adj[v].push(w);
+        this.adj[w].push(v); // Assuming the graph is undirected
+    }
 
-//     DFS(startingNode) {
-//         let visited = new Array(this.V).fill(false);
+    DFS(startingNode) {
+        let visited = new Array(this.V).fill(false);
 
-//         const dfsRecursive = (node) => {
-//             visited[node] = true;
-//             console.log(node + " ");
+        const dfsRecursive = (node) => {
+            visited[node] = true;
+            console.log(node + " ");
 
-//             for (let i of this.adj[node]) {
-//                 if (!visited[i]) {
-//                     dfsRecursive(i);
-//                 }
-//             }
-//         };
-
-//         dfsRecursive(startingNode);
-//     }
-// }
+            for (const i of this.adj[node]) {
+                if (!visited[i]) {
+                    dfsRecursive(i);
+                }
+            }
+        };
+        dfsRecursive(startingNode);
+    }
+}
 
 
 /**
