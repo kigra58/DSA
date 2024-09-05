@@ -57,3 +57,39 @@ printPath(root, x);
 
 
 
+/**
+ * PATH OF BINARY TREE USING BFS
+ */
+
+class TreeNode {
+    constructor(value = 0, left = null, right = null) {
+        this.data = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+
+function pathUsingBFS(root,target){
+
+	const queue=[];
+    queue.push({node:root,path:[root.data]});
+	while (queue.length>0) {
+		    const {node,path} =queue.shift();
+		    if(node.data===target){
+				return path[0].no;
+			}
+			if(root.left){
+				queue.push({node:node.left,path:[...path,node.left]})
+			}
+			if(root.right){
+				queue.push({node:node.right,path:[...path,node.right]})
+			}
+	}
+}
+
+const root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
+
+const res3=pathUsingBFS(root1,5);
+console.log("ressssssss",res3)
+
