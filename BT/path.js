@@ -71,7 +71,6 @@ class TreeNode {
 
 
 function pathUsingBFS(root,target){
-
 	const queue=[];
     queue.push({node:root,path:[root.data]});
 	while (queue.length>0) {
@@ -88,7 +87,29 @@ function pathUsingBFS(root,target){
 	}
 }
 
-const root1 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
+
+function pathSumUsingBFS(root,target){
+    const queue=[];
+	queue.push({node:root,path:[root.data],sum:0});
+	while (queue.length>0) {
+		const {node,path,sum}=queue.shift();
+		if(node.data===target){
+			return sum;
+		}
+		if(node.left){
+          queue.push({node:node.left,path:[...path,node.left.data],sum:sum=+sum})
+		}
+		if(node.right){
+            queue.push({node:node.left,path:[...path,node.right.data],sum:sum=+sum});
+		}
+	}
+}
+
+const root1 = new TreeNode(1,
+	          new TreeNode(2, 
+		      new TreeNode(4),
+			  new TreeNode(5)),
+			  new TreeNode(3));
 
 const res3=pathUsingBFS(root1,5);
 console.log("ressssssss",res3)
