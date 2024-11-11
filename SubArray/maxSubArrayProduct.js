@@ -58,6 +58,24 @@ function fun(arr) {
 
 
 
+function maxSubArrayProduct(arr){
+    let globalProduct=1;
+    for(let i=0;i<arr.length;i++){
+         let localProduct=1;
+
+        for(let j=i;j<arr.length;j++){
+            localProduct=localProduct*arr[j];
+            if(globalProduct<localProduct){
+                globalProduct=localProduct;
+            }
+        }
+    }
+    return globalProduct;
+     
+}
+const res_=maxSubArrayProduct([-2, 6, -3, -10, 0, 2]);
+
+console.log("ressssssssss",res_);
 
 
 
@@ -69,13 +87,13 @@ function fun(arr) {
 
 
 // const arr = [1, -2, -3, 0, 7, -8, -2];
-const arr = [-8, 5, 3, 1, 6];
+// const arr = [-8, 5, 3, 1, 6];
 // const arr = [6, -3, -10, 0, 2];
 // const res = usingKadensAlgo(arr);
 // const res = maxSubarrayProduct(arr);
-const res = fun(arr);
+// const res = fun(arr);
 
-console.log("==============res", res);
+// console.log("==============res", res);
 
 
 
