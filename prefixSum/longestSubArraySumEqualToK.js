@@ -1,6 +1,3 @@
-
-
-
 function secondApproch(arr, n, sum) {
     let maxLen = 0;
     for (let i = 0; i < n; i++) {
@@ -16,25 +13,30 @@ function secondApproch(arr, n, sum) {
 };
 
 
-function thirdApproch(arr, n, k) {
-    let prevSum = new Map();
-    let sum = 0, maxLen = 0;
-    for (let i = 0; i < n; i++) {
+function byPrefixSum(arr, k) {
+    const mp = new Map();
+    let res = 0, sum = 0;
+
+    for (let i = 0; i < arr.length; ++i) {
         sum += arr[i];
-        if (sum % k === 0) {
-            maxLen = i + 1;
-        };
 
-        if (!prevSum.has(sum)) {
-            prevSum.set(sum, i);
-        };
+        if (sum === k) {
+            res = i + 1;
+        }
 
-        if (prevSum.has(sum - k)) {
-            maxLen = Math.max(maxLen, i - prevSum.get(sum - k))
-        };
-    };
-    return maxLen;
-};
+        if (mp.has(sum - k)) {
+            res = Math.max(res, i - mp.get(sum - k));
+        }
+
+        if (!mp.has(sum)) {
+            mp.set(sum, i);
+        }
+    }
+    return res;
+}
+
+
+
 
 
 const arr = [10, 5, 2, 7, 1, 9];

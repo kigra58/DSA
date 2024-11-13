@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 
 function LCS( X, Y , m , n ) { 
