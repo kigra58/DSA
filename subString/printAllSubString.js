@@ -1,16 +1,20 @@
+// ELEMENT SHOULD BE CONTIGUOUS FOR SUB ARRAY AND SUB STRING
 
 
 
-function allSubString(str) {
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i; j < str.length; j++) {
-            let ans = "";
-            for (let k = i; k <= j; k++) {
-                ans += str[k];
-            }
-            console.log(ans);
+function printAllSubstrings(str) {
+    let n = str.length;
+    let substrings = [];
+
+    for (let i = 0; i < n; i++) {
+        let temp = ""; 
+        for (let j = i; j < n; j++) {
+            temp += str[j]; 
+            substrings.push(temp); 
         }
     }
+   return substrings;
 }
-const res = allSubString("leetcode");
-console.log("res: " + res);
+
+const res=printAllSubstrings("abc");
+console.log("Ress",res);
