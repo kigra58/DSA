@@ -18,7 +18,7 @@ function CC(arr, sum, N) {
     if (sum < 0 || N <= 0) return 0;
 
     const includeItem = CC(arr, sum - arr[N - 1], N);
-    const excludeItem = CC(arr, sum, N - 1);
+    const excludeItem = CC(arr, sum, N - 1); // N-1 FOR CALL NEXT INDEX
 
     return includeItem + excludeItem;
 }
