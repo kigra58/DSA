@@ -2,17 +2,19 @@ const s1 = "sunday";
 const s2 = "saturday";
 
 /**
- * CONVERT STRING S1 -> S2  FIND MIN OPERATION TO PERFORMED
+ * CONVERT STRING S1 -> S2  FIND MIN NUMBER OF OPERATION TO PERFORMED
  */
 
 /**
- *  OPERATION-> 1. INSERT 2. REMOVE 3.REPLACE
+ *  OPERATION-> 1. INSERT 
+ *              2. REMOVE
+ *              3. REPLACE
  */
 
 /**
  * INSERT -> Fun(M,N-1)
- * REPLACE -> Fun(M-1,N-1)
  * REMOVE -> Fun(M-1,N)
+ * REPLACE -> Fun(M-1,N-1)
  */
 
 function editDistance(s1, s2, s1Len, s2Len) {
