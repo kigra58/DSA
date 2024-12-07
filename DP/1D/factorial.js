@@ -48,6 +48,19 @@ function fiboTopDown(n){
   } 
 }
 
+// TABULATION
+function fiboBottomUP(n){
+    const dp=new Array(n+1).fill(-1);
+    if(n<2) return n;
+    dp[0]=0;
+    dp[1]=1;
+    
+    for(let i=2;i<n+1;i++){
+        dp[i]=dp[i-2]+dp[i-1];
+    }
+    return dp[n];
+}
+
 
 
 console.log("=============>",factTopDown(num));
