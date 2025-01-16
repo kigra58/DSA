@@ -18,4 +18,10 @@ function main(arr, target) {
       }
     }
   }
-}
+};
+
+
+
+
+const res=main([1,3,5,9,10,2,6],22);
+console.log(res);

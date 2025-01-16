@@ -35,6 +35,24 @@ function twoSum(arr,target) {
 };
 
 
+
+// 
+function byHashMap(nums,target){
+    const map=new Map();
+    for(const index in nums){
+       map.set(nums[index],index);
+    };
+
+    for(const index in nums){
+       const remain=target- nums[index];
+       if(map.has(remain) && map.get(remain)!==index){
+          return [+index,+map.get(remain)];
+       }
+    }
+    return [-1];
+}
+
+
 const res=twoSum([2,7,11,15],9);
-console.log("res :"+ res);
+console.log(res);
 

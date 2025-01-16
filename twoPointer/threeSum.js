@@ -37,9 +37,33 @@ function usingTwoPointer(A, target) {
     }
   }
   return [-1];
+};
+
+
+function byHashMap(nums,target){
+   const map=new Map();
+   for(const index in nums){
+     map.set(nums[index],index);
+   };
+
+  //  console.log(map)
+
+   for(const index in nums){
+      for(let j= +index+1;j<nums.length;j++){
+           const twoSum=nums[index] + nums[j];
+           const remain=target- twoSum;
+          //  console.log({index,j,num1: nums[index],num2:nums[j],remain});
+           if(map.has(remain) && index!==j && j!==map.get(remain) && index!==map.get(remain)){
+             return [+index,+j,+map.get(remain)]
+           }
+      }
+   }
+   return [-1];
 }
+
+
 
 const nums = [1, 4, 45, 6, 10, 8];
 const target = 22;
-const output = bruteForce(nums, target);
+const output = byHashMap(nums, target);
 console.log(output);
