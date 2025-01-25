@@ -44,6 +44,18 @@ class MaxHeap {
         this.heap = [];
     }
 
+    parentIndex(index){
+        return Math.floor((index - 1) / 2);
+    }
+
+    leftChildIndex(index){
+        return 2 * index + 1;
+    }
+
+    rightChildIndex(index){
+        return 2 * index + 2;
+    }
+
     push(val) {
         this.heap.push(val);
         this.heapifyUp(this.heap.length - 1);
@@ -77,7 +89,7 @@ class MaxHeap {
 
     heapifyUp(index) {
         while (index > 0) {
-            const parentIndex = Math.floor((index - 1) / 2);
+            const parentIndex =this.parentIndex(index);
             if (this.heap[parentIndex] >= this.heap[index]) {
                 break;
             }
@@ -87,21 +99,15 @@ class MaxHeap {
     }
 
     heapifyDown(index) {
-        const leftChildIndex = 2 * index + 1;
-        const rightChildIndex = 2 * index + 2;
-        let largestIndex = index;
+        const leftChildIndex = this.leftChildIndex(index);
+        const rightChildIndex = this.rightChildIndex(index);
 
-        if (
-            leftChildIndex < this.heap.length &&
-            this.heap[leftChildIndex] > this.heap[largestIndex]
-        ) {
-            largestIndex = leftChildIndex;
+        let largestIndex = index;
+        if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] > this.heap[largestIndex]) {
+             largestIndex = leftChildIndex;
         }
 
-        if (
-            rightChildIndex < this.heap.length &&
-            this.heap[rightChildIndex] > this.heap[largestIndex]
-        ) {
+        if (rightChildIndex < this.heap.length && this.heap[rightChildIndex] > this.heap[largestIndex]) {
             largestIndex = rightChildIndex;
         }
 
