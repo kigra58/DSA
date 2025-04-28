@@ -6,10 +6,10 @@ const arr = [
 	[0, 0, -1, 0, 0]
 ];
 
-let row = 5;
-let col = 5;
+const row = 5;
+const col = 5;
 // Directions
-let dir = [[0, 1], [0, -1], [1, 0], [-1, 0]];
+const dir = [[0, 1], [0, -1], [1, 0], [-1, 0]];
 
 function isPath(arr) {
 	let queue = [];
@@ -25,7 +25,7 @@ function isPath(arr) {
 		if (p[0] == row - 1 && p[1] == col - 1)
 			return true;
 
-		for (var i = 0; i < 4; i++) {
+		for (let i = 0; i < 4; i++) {
 			const a = p[0] + dir[i][0];
 			const b = p[1] + dir[i][1];
 

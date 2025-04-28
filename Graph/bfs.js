@@ -34,21 +34,29 @@ class Graph{
 			});
 		}
 	}
+
+	printAdjacencyList(){
+     return this.adj;
+	}
 }
 	
 
-obj = new Graph(4);
+const obj = new Graph(4);
 obj.addEdge(0, 1);
 obj.addEdge(0, 2);
 obj.addEdge(1, 2);
 obj.addEdge(2, 0);
 obj.addEdge(2, 3);
 obj.addEdge(3, 3);
-	
-const startingVertext=1;
 
-console.log(`BFS" +
-			"(starting from vertex ${startingVertext}) `);
-obj.BFS(startingVertext);
+
+const res= obj.printAdjacencyList();
+console.log("res",res)
+	
+// const startingVertext=1;
+
+// console.log(`BFS" +
+// 			"(starting from vertex ${startingVertext}) `);
+// obj.BFS(startingVertext);
 	
 
