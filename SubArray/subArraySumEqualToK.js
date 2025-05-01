@@ -8,7 +8,7 @@
 
 
 
-function firstApproch(arr, n, sum) {
+function firstApproch(arr, n, target) {
     let cnt = 0;
     for (let i = 0; i < n; i++) {
         for (let j = i; j < n; j++) {
@@ -16,20 +16,20 @@ function firstApproch(arr, n, sum) {
             for (let k = i; k < j; k++) {
                 cursum += arr[k];
             }
-            if (cursum === sum) {
+            if (cursum === target) {
                 cnt++;
             }
         }
     }
 };
 
-function secondApproch(arr, n, sum) {
+function secondApproch(arr, n, target) {
     let cnt = 0;
     for (let i = 0; i < n; i++) {
         let currsum = 0;
         for (let j = i; j < n; j++) {
             currsum += arr[j];
-            if (currsum === sum) {
+            if (currsum === target) {
                 cnt++;
             };
         };
@@ -38,22 +38,22 @@ function secondApproch(arr, n, sum) {
 
 
 // x=currSum-sum
-function findSubarraySum(arr, n, sum) {
+function findSubarraySum(arr, n, target) {
     let prevSum = new Map();
     let cnt = 0;
 
     let currsum = 0;
     for (let i = 0; i < n; i++) {
         currsum += arr[i];
-        if (currsum == sum) {
+        if (currsum === target) {
             cnt++;
         };
 
-        if (prevSum.has(currsum - sum)) {
-            cnt += prevSum.get(currsum - sum);
+        if (prevSum.has(currsum - target)) {
+            cnt += prevSum.get(currsum - target);
         };
 
-        if (prevSum.get(currsum) == null) {
+        if (prevSum.get(currsum) === null) {
             prevSum.set(currsum, 1);
         }
         else {
@@ -64,8 +64,8 @@ function findSubarraySum(arr, n, sum) {
 };
 
 const arr = [10, 2, -2, -20, 10];
-const sum = -10;
+const target = -10;
 const n = arr.length;
-console.log(findSubarraySum(arr, n, sum));
+console.log(findSubarraySum(arr, n, target));
 
 
