@@ -7,9 +7,9 @@
 
 
 const vertex = 8;
-let visited = new Array(vertex).fill(false);
-let adjList = new Array(vertex).fill([]);
-let parent = new Array(vertex).fill(-1);
+const visited = new Array(vertex).fill(false);
+const adjList = new Array(vertex).fill([]);
+const parent = new Array(vertex).fill(-1);
 const startingNode = 0;
 const destNode = 7;
 

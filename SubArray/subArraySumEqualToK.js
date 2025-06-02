@@ -38,7 +38,7 @@ function secondApproch(arr, n, sum) {
 
 
 // x=currSum-sum
-function findSubarraySum(arr, n, sum) {
+function thirdApproch(arr, n, sum) {
     let prevSum = new Map();
     let cnt = 0;
 
@@ -53,7 +53,7 @@ function findSubarraySum(arr, n, sum) {
             cnt += prevSum.get(currsum - sum);
         };
 
-        if (prevSum.get(currsum) == null) {
+        if (!prevSum.has(currsum)) {
             prevSum.set(currsum, 1);
         }
         else {
@@ -66,6 +66,6 @@ function findSubarraySum(arr, n, sum) {
 const arr = [10, 2, -2, -20, 10];
 const sum = -10;
 const n = arr.length;
-console.log(findSubarraySum(arr, n, sum));
+console.log(thirdApproch(arr, n, sum));
 
 
