@@ -7,7 +7,7 @@
 var longestConsecutive = function(nums) {
     if (!nums || nums.length === 0) return 0;
     
-    const numSet = new Set(nums);
+    const numSet = new Set(nums); // remove duplicates
     let maxLen = 0;
 
     for (let num of numSet) {

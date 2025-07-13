@@ -1,4 +1,39 @@
+
+/*
+Find out the sub array sum from array which have lagest sum 
+ */
 const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+
+
+
+
+function bruteForch(arr) {
+    let res = arr[0];
+  
+    // Outer loop for starting point of subarray+
+    for (let i = 0; i < arr.length; i++) {
+        let currSum = 0;
+      
+        // Inner loop for ending point of subarray
+        for (let j = i; j < arr.length; j++) {
+            currSum = currSum + arr[j];
+          
+            // Update res if currSum is greater than res
+            res = Math.max(res, currSum);
+        }
+    }
+    return res;
+}
+
+
+const res1= bruteForch( [2, 3, -8, 7, -1, 2, 3]);
+console.log("bruteforce==========>",res1);
+
+
+
+
+
 
 /**
  *  ALGORITHM
@@ -6,17 +41,17 @@ const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 function kadens(arr) {
     let currSum = 0; maxSum = arr[0];
     arr.forEach(ele => {
-        currSum += ele;
+        currSum =currSum+ele;
+        currSum=Math.max(currSum,ele);  
         maxSum = Math.max(currSum, maxSum);
-        if (sum < 0) {
-            sum = 0;
-        }
+     
     });
     return maxSum;
 };
 
 
-
+const kadenseRes=kadens( [2, 3, -8, 7, -1, 2, 3]);
+console.log("kadenseRes==========>",kadenseRes);
 
 
 

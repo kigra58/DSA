@@ -53,6 +53,7 @@ function majorityElement(nums) {
             candidate = num;
         }
         count += (num === candidate) ? 1 : -1;
+        console.table({count,num,candidate})
     }
     return candidate;
 }

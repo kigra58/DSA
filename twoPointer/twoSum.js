@@ -1,4 +1,11 @@
 
+/*
+
+Find out the array of index which value have equal to given target
+
+
+
+ */
 
 /**
  * BRUTE FORCE APPROCH

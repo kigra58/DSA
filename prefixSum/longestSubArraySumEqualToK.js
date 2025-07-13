@@ -1,3 +1,12 @@
+/**
+ 
+Find the longest sub array sum equalt to K
+
+
+ */
+
+
+
 function secondApproch(arr, n, sum) {
     let maxLen = 0;
     for (let i = 0; i < n; i++) {
